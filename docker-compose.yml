@@ -8,9 +8,7 @@ services:
             - ./src/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     node-app:
         build: .
-        volumes:
-            - ./:/app
-            - /app/node_modules
+        image: ccbolo/node-app-docker-test
         environment:
             - PORT=8000
         # if u using dotenv file
